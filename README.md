@@ -25,7 +25,7 @@ Before running this application, make sure you have the following:
 #### Clone repository
 
 ```bash
-git clone git@github.com:VJBano/CRYSTEP_MINI.git
+git clone
 ```
 
 #### Install Dependencies
@@ -82,6 +82,40 @@ nano .env
     npm run start
 
   ```
+
+- Open Postman
+
+  - Use GET method
+
+  ```bash
+      http://localhost:5050/api/graphql
+
+  ```
+
+  - Add this on Header
+
+    - Key
+
+    ```bash
+        Content-Type
+    ```
+
+    - Value
+
+    ```bash
+        application/json
+    ```
+
+  - Body Select Raw
+  - Paste this
+
+  ```bash
+      {
+      "query": "query { aavePositions(walletAddress: \"0x6813Eb9362372EEF6200f3b1dbC3f819671cBA69\") { collateral_positions { asset amount } borrowing_positions { asset amount } } }"
+      }
+  ```
+
+  - You can put any Wallet Address
 
 ## Dependencies
 
